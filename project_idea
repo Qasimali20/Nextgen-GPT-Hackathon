@@ -1,0 +1,1 @@
+We aim to generate a 3D home structure using  models from Clarifai. The process involves analyzing images of homes through GPT-4 Vision model from Clarifai. Subsequently, GPT-4 Turbo would be utilized to gather user input for the dimensions of the home. Finally, for displaying the home, the DALL-E model would be employed
