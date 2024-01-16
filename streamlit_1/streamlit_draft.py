@@ -16,3 +16,5 @@ submit = st.button("Submit")
 if submit:
     st.session_state["my_input"] = my_input
     st.write("You have entered: ", my_input)
+
+# Now in terminal write "streamlit run streamlit_1"
