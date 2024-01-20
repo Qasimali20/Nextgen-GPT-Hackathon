@@ -1,0 +1,260 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #83e7c6, hsl(288, 61%, 68%));
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-y: auto;
+        }
+
+        .ui-box {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 30px hsl(288, 61%, 50%);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h2 {
+            color: #007BFF;
+        }
+
+        .rating {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        label {
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            background-image: url('star.png'); /* Replace 'star.png' with your star icon */
+            background-size: cover;
+        }
+
+        input[type="radio"]:checked + label {
+            background-image: url('filled-star.png'); /* Replace 'filled-star.png' with your filled star icon */
+        }
+
+
+        .result-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h2 {
+            color: #007BFF;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+
+        .image-box {
+            margin-top: 20px;
+            border: 2px solid #007BFF;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .jumbotron {
+            background-color: #00303F;
+            color: #fff;
+            padding: 50px 0;
+            margin-top: auto; /* Move the footer to the bottom */
+        }
+
+        .jumbotron h1,
+        .jumbotron p {
+            color: #CAE4DB;
+        }
+
+        footer {
+            background-color: #00303F;
+            color: #CAE4DB;
+            text-align: center;
+            padding: 20px 0; /* Adjusted padding */
+            width: 100%; /* Set the width to 100% */
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .footer-links a {
+            color: #CAE4DB;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #007BFF;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-section {
+            margin: 0 20px;
+        }
+
+        .footer-section h3 {
+            color: #fff;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+        .rating {
+  display: inline-block;
+  opacity: 1;
+}
+
+.rating input {
+  display: none;
+  opacity: 1;
+}
+
+.rating label {
+  float: right;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.rating label:before {
+  content: '\2605';
+  font-size: 30px;
+  transition: color 0.3s;
+}
+
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #ffc300;
+  transform: scale(1.2);
+  transition: color 0.3s, transform 0.3s, box-shadow 0.3s;
+  animation: bounce 0.5s ease-in-out alternate;
+}
+
+@keyframes bounce {
+  to {
+    transform: scale(1.3);
+  }
+}
+    </style>
+</head>
+
+<body>
+    <div class="result-container">
+        <h2>Here is the 3D  design of your Home</h2>
+        <div class="image-box">
+            <img src="data:image/png;base64,{{ img_data }}" alt="Generated Image">
+        </div>
+    </div>
+    <h2>Thank you for using our services</h2>
+
+    <div class="ui-box">
+        <h2>Rate your experience!</h2>
+        <div class="rating">
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5"></label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4"></label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3"></label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2"></label>
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1"></label>
+        </div>
+        
+    </div>
+      
+     <!-- Footer -->
+     <footer>
+        <div class="jumbotron">
+            <div class="container footer-content">
+                <div class="footer-section">
+                    <h3>Architex-Ai</h3>
+                    <p>View 3D House Models</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Stay with Us</h3>
+                    <ul>
+                        <a href="osamabentennyson@gmail.com">osamabentennyson@gmail.com</a>
+                        <li>0307-1585431</li>
+                        <li>Faisalabad-Pakistan</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect with Us</h3>
+                    <ul>
+                        <!-- Replace text links with image logos using static method -->
+                        <a href="https://www.facebook.com/osama.ghaffar.79?mibextid=ZbWKwL"><img src="{% static 'images/facebook.png' %}" alt="Facebook" width="20" height="20"></a>
+                        <a href="https://twitter.com/moiznazaheer9"><img src="{% static 'images/twitter.png' %}" alt="Twitter" width="20" height="20"></a>
+                        <a href="https://www.linkedin.com/in/osama-ghaffar-9593aa290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="{% static 'images/linkedin.png' %}" alt="LinkedIn" width="20" height="20"></a>
+                        <a href="https://www.instagram.com/osamatkojl?igsh=aWJhbzk1ajdtczFi"><img src="{% static 'images/instagram.png' %}" alt="Instagram" width="20" height="20"></a>
+                    </ul>
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2024 ArchitexAi. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
